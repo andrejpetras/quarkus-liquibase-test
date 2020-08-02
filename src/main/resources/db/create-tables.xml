@@ -1,0 +1,266 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd"
+                   objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet author="dev (generated)" id="1595839244397-1">
+        <createTable tableName="pl_failed_step">
+            <column name="guid" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pl_failed_step_pkey"/>
+            </column>
+            <column name="creationdate" type="TIMESTAMP"/>
+            <column name="creationuser" type="VARCHAR(255)"/>
+            <column name="modificationdate" type="TIMESTAMP"/>
+            <column name="modificationuser" type="VARCHAR(255)"/>
+            <column name="optlock" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="business_relevant" type="BOOLEAN"/>
+            <column name="correlation_id" type="VARCHAR(255)"/>
+            <column name="deep_link" type="VARCHAR(255)"/>
+            <column name="end_timestamp" type="TIMESTAMP"/>
+            <column name="error_code" type="VARCHAR(255)"/>
+            <column name="error_msg" type="VARCHAR(255)"/>
+            <column name="error_type" type="VARCHAR(255)"/>
+            <column name="execution_count" type="INTEGER"/>
+            <column name="execution_id" type="VARCHAR(255)"/>
+            <column name="external_issue_id" type="VARCHAR(255)"/>
+            <column name="incident_id" type="VARCHAR(255)"/>
+            <column name="metadata" type="JSONB"/>
+            <column name="organization" type="VARCHAR(255)"/>
+            <column name="priority" type="VARCHAR(255)"/>
+            <column name="process_id" type="VARCHAR(255)"/>
+            <column name="process_inst_id" type="VARCHAR(255)"/>
+            <column name="process_log_id" type="VARCHAR(255)"/>
+            <column name="process_name" type="VARCHAR(255)"/>
+            <column name="process_step_id" type="VARCHAR(255)"/>
+            <column name="process_step_log_id" type="VARCHAR(255)"/>
+            <column name="process_step_name" type="VARCHAR(255)"/>
+            <column name="ref_bid" type="BIGINT"/>
+            <column name="ref_key" type="VARCHAR(255)"/>
+            <column name="resolution" type="VARCHAR(255)"/>
+            <column name="resolution_key" type="VARCHAR(255)"/>
+            <column name="resolution_origin" type="VARCHAR(255)"/>
+            <column name="resolution_id" type="VARCHAR(255)"/>
+            <column name="result" type="VARCHAR(255)"/>
+            <column name="resp_body" type="VARCHAR(255)"/>
+            <column name="resp_status" type="VARCHAR(255)"/>
+            <column name="resolution_source" type="VARCHAR(255)"/>
+            <column name="resolution_status" type="VARCHAR(255)"/>
+            <column name="severity" type="VARCHAR(255)"/>
+            <column name="start_timestamp" type="TIMESTAMP"/>
+            <column name="status" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="dev (generated)" id="1595839244397-2">
+        <createTable tableName="pl_process_step_log">
+            <column name="guid" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pl_process_step_log_pkey"/>
+            </column>
+            <column name="creationdate" type="TIMESTAMP"/>
+            <column name="creationuser" type="VARCHAR(255)"/>
+            <column name="modificationdate" type="TIMESTAMP"/>
+            <column name="modificationuser" type="VARCHAR(255)"/>
+            <column name="optlock" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="business_relevant" type="BOOLEAN"/>
+            <column name="correlation_key" type="VARCHAR(255)"/>
+            <column name="deployment_id" type="VARCHAR(255)"/>
+            <column name="end_timestamp" type="TIMESTAMP"/>
+            <column name="execution_id" type="VARCHAR(255)"/>
+            <column name="input_parameters" type="JSONB"/>
+            <column name="metadata" type="JSONB"/>
+            <column name="output_parameters" type="JSONB"/>
+            <column name="parent_execution_id" type="VARCHAR(255)"/>
+            <column name="process_id" type="VARCHAR(255)"/>
+            <column name="process_instance_id" type="VARCHAR(255)"/>
+            <column name="process_key" type="VARCHAR(255)"/>
+            <column name="process_name" type="VARCHAR(255)"/>
+            <column name="process_version" type="VARCHAR(255)"/>
+            <column name="start_timestamp" type="TIMESTAMP"/>
+            <column name="latest_execution_id" type="VARCHAR(255)"/>
+            <column name="node_id" type="VARCHAR(255)"/>
+            <column name="node_name" type="VARCHAR(255)"/>
+            <column name="node_resolution_status" type="VARCHAR(255)"/>
+            <column name="node_status" type="VARCHAR(255)"/>
+            <column name="node_type" type="VARCHAR(255)"/>
+            <column name="timer_id" type="BIGINT"/>
+            <column name="visible" type="BOOLEAN"/>
+            <column name="process_log_guid" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="dev (generated)" id="1595839244397-3">
+        <createTable tableName="pl_message">
+            <column name="guid" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pl_message_pkey"/>
+            </column>
+            <column name="creationdate" type="TIMESTAMP"/>
+            <column name="creationuser" type="VARCHAR(255)"/>
+            <column name="modificationdate" type="TIMESTAMP"/>
+            <column name="modificationuser" type="VARCHAR(255)"/>
+            <column name="optlock" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="active_status" type="VARCHAR(255)"/>
+            <column name="business_relevant" type="BOOLEAN"/>
+            <column name="causing_system" type="VARCHAR(255)"/>
+            <column name="content" type="JSONB"/>
+            <column name="correlation_id" type="VARCHAR(255)"/>
+            <column name="description" type="VARCHAR(500)"/>
+            <column name="execution_id" type="VARCHAR(255)"/>
+            <column name="ext_sys_msg_desc" type="VARCHAR(500)"/>
+            <column name="ext_sys_msg_key" type="VARCHAR(255)"/>
+            <column name="ext_sys_msg_type" type="VARCHAR(255)"/>
+            <column name="manual" type="BOOLEAN"/>
+            <column name="msg_key" type="VARCHAR(255)"/>
+            <column name="parameter" type="JSONB"/>
+            <column name="metadata" type="JSONB"/>
+            <column name="occurrence_date" type="TIMESTAMP"/>
+            <column name="process_id" type="VARCHAR(255)"/>
+            <column name="process_inst_id" type="VARCHAR(255)"/>
+            <column name="ref_pl_id" type="VARCHAR(255)"/>
+            <column name="ref_pl_step_exec_id" type="VARCHAR(255)"/>
+            <column name="ref_pl_step_id" type="VARCHAR(255)"/>
+            <column name="support_send_time" type="TIMESTAMP"/>
+            <column name="support_relevant" type="BOOLEAN"/>
+            <column name="msg_type" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="dev (generated)" id="1595839244397-4">
+        <createTable tableName="pl_res_options">
+            <column name="guid" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pl_res_options_pkey"/>
+            </column>
+            <column name="creationdate" type="TIMESTAMP"/>
+            <column name="creationuser" type="VARCHAR(255)"/>
+            <column name="modificationdate" type="TIMESTAMP"/>
+            <column name="modificationuser" type="VARCHAR(255)"/>
+            <column name="optlock" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="call_back_url" type="VARCHAR(255)"/>
+            <column name="key" type="VARCHAR(255)"/>
+            <column name="label" type="VARCHAR(255)"/>
+            <column name="failedstep_guid" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="dev (generated)" id="1595839244397-5">
+        <createTable tableName="pl_process_log">
+            <column name="guid" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pl_process_log_pkey"/>
+            </column>
+            <column name="creationdate" type="TIMESTAMP"/>
+            <column name="creationuser" type="VARCHAR(255)"/>
+            <column name="modificationdate" type="TIMESTAMP"/>
+            <column name="modificationuser" type="VARCHAR(255)"/>
+            <column name="optlock" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="business_relevant" type="BOOLEAN"/>
+            <column name="correlation_key" type="VARCHAR(255)"/>
+            <column name="deployment_id" type="VARCHAR(255)"/>
+            <column name="end_timestamp" type="TIMESTAMP"/>
+            <column name="execution_id" type="VARCHAR(255)"/>
+            <column name="input_parameters" type="JSONB"/>
+            <column name="metadata" type="JSONB"/>
+            <column name="output_parameters" type="JSONB"/>
+            <column name="parent_execution_id" type="VARCHAR(255)"/>
+            <column name="process_id" type="VARCHAR(255)"/>
+            <column name="process_instance_id" type="VARCHAR(255)"/>
+            <column name="process_key" type="VARCHAR(255)"/>
+            <column name="process_name" type="VARCHAR(255)"/>
+            <column name="process_version" type="VARCHAR(255)"/>
+            <column name="start_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="domain_ref_id" type="VARCHAR(255)"/>
+            <column name="domain_ref_type" type="VARCHAR(255)"/>
+            <column name="organization" type="VARCHAR(255)"/>
+            <column name="parent_process_id" type="VARCHAR(255)"/>
+            <column name="parent_process_instance_id" type="VARCHAR(255)"/>
+            <column name="parent_process_log_id" type="VARCHAR(255)"/>
+            <column name="parent_process_node_id" type="VARCHAR(255)"/>
+            <column name="parent_process_step" type="VARCHAR(255)"/>
+            <column name="process_executor" type="VARCHAR(255)"/>
+            <column name="process_resolution_status" type="VARCHAR(255)"/>
+            <column name="process_status" type="VARCHAR(255)"/>
+            <column name="root_process_id" type="VARCHAR(255)"/>
+            <column name="root_process_instance_id" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="dev (generated)" id="1595839244397-6">
+        <createTable tableName="pl_process_step_exec_log">
+            <column name="guid" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pl_process_step_exec_log_pkey"/>
+            </column>
+            <column name="creationdate" type="TIMESTAMP"/>
+            <column name="creationuser" type="VARCHAR(255)"/>
+            <column name="modificationdate" type="TIMESTAMP"/>
+            <column name="modificationuser" type="VARCHAR(255)"/>
+            <column name="optlock" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="end_timestamp" type="TIMESTAMP"/>
+            <column name="input_parameters" type="JSONB"/>
+            <column name="manual" type="BOOLEAN"/>
+            <column name="output_parameters" type="JSONB"/>
+            <column name="resolution_status" type="VARCHAR(255)"/>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="resolution" type="VARCHAR(255)"/>
+            <column name="start_timestamp" type="TIMESTAMP"/>
+            <column name="process_step_log_guid" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="dev (generated)" id="1595839244397-7">
+        <createIndex indexName="fs_process_inst_id" tableName="pl_failed_step">
+            <column name="process_inst_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="dev (generated)" id="1595839244397-8">
+        <createIndex indexName="fs_process_step_log_guid" tableName="pl_failed_step">
+            <column name="process_step_log_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="dev (generated)" id="1595839244397-9">
+        <addUniqueConstraint columnNames="process_id, process_inst_id, execution_id, incident_id" constraintName="uk5l4e5rpjyo079n2nrv7fmo3oa" tableName="pl_failed_step"/>
+    </changeSet>
+    <changeSet author="dev (generated)" id="1595839244397-10">
+        <createIndex indexName="psl_process_instance_id_index" tableName="pl_process_step_log">
+            <column name="process_instance_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="dev (generated)" id="1595839244397-11">
+        <addUniqueConstraint columnNames="process_id, process_instance_id, execution_id" constraintName="uk65hhsb0h93li7786mnpgdlwjx" tableName="pl_process_step_log"/>
+    </changeSet>
+    <changeSet author="dev (generated)" id="1595839244397-12">
+        <createIndex indexName="pm_process_log_guid" tableName="pl_message">
+            <column name="ref_pl_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="dev (generated)" id="1595839244397-13">
+        <createIndex indexName="pm_process_step_log_guid" tableName="pl_message">
+            <column name="ref_pl_step_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="dev (generated)" id="1595839244397-14">
+        <addUniqueConstraint columnNames="process_id, process_inst_id, execution_id, msg_key" constraintName="uk3x28bng06af1vyv3o5xu2oqp6" tableName="pl_message"/>
+    </changeSet>
+    <changeSet author="dev (generated)" id="1595839244397-15">
+        <addForeignKeyConstraint baseColumnNames="failedstep_guid" baseTableName="pl_res_options" constraintName="fk32c4by4w29mr3949v5h2gegrb" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="guid" referencedTableName="pl_failed_step" validate="true"/>
+    </changeSet>
+    <changeSet author="dev (generated)" id="1595839244397-16">
+        <createIndex indexName="pl_process_instance_id_index" tableName="pl_process_log">
+            <column name="process_instance_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="dev (generated)" id="1595839244397-17">
+        <addUniqueConstraint columnNames="process_id, process_instance_id" constraintName="ukjk9hmq9l9amiid55fl645a9tk" tableName="pl_process_log"/>
+    </changeSet>
+    <changeSet author="dev (generated)" id="1595839244397-18">
+        <addForeignKeyConstraint baseColumnNames="process_step_log_guid" baseTableName="pl_process_step_exec_log" constraintName="fkhu8urj62ea10tlbbiyhflev79" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="guid" referencedTableName="pl_process_step_log" validate="true"/>
+    </changeSet>
+    <changeSet author="dev (generated)" id="1595839244397-19">
+        <addForeignKeyConstraint baseColumnNames="process_log_guid" baseTableName="pl_process_step_log" constraintName="fkoqyfkajjm8m8eymlx5vvxetkt" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="guid" referencedTableName="pl_process_log" validate="true"/>
+    </changeSet>
+</databaseChangeLog>
